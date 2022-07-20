@@ -1,2 +1,5 @@
-[all]
-centos1
+[centos]
+centos[1:3] ansible_user=root
+
+[ubuntu]
+ubuntu[1:3]
