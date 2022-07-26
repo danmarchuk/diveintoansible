@@ -1,0 +1,31 @@
+# The YAML file always starts with three dashes and ends with three dots
+---
+Aston Martin:
+  year_founded: 1991
+  website: www.amongus.pl
+  founded_by:
+    -Among
+    -Us
+
+Fiat:
+  year_founded: 1991
+  website: www.amongus.pl
+  founded_by:
+    -Among
+    -Us
+
+Ford:
+  year_founded: 1991
+  website: www.amongus.pl
+  founded_by:
+    -Among
+    -Us
+
+Vauxhall:
+  year_founded: 1991
+  website: www.amongus.pl
+  founded_by:
+    -Among
+    -Us
+
+...
