@@ -8,8 +8,7 @@
   # Hosts: where our play will run and options it will run with
   hosts: linux
   # Vars: variables that will apply to the play, on all target systems
-  vars_files:
-    - vars/logos.yaml
+
   # Tasks: the list of tasks that will be executed within the play, this section
   # can also be used for pre and post tasks
 
@@ -31,23 +30,11 @@
         name: nginx
         state: restarted
       notify: Check HTTP Service
-    
-    - name: Template index.html-logos.j2 to index html on target
-      template:
-        src: index.html-easter_egg.j2
-        dest: "{{ nginx_root_location }}/index.html"
-        mode: 0644
-
-
-    - name: Unarchive playbook stacker game
-      unarchive:
-        src: playbook_stacker.zip
-        dest: "{{ nginx_root_location }}"
-        mode: 0755
 
   handlers:
     - name: Check HTTP Service
-      uri:
+      debug:
+        msg: http://{{ ansible_default_ipv4.adress }}
         status_code: 200
-        url: http://{{ ansible_default_ipv4.address }}
+ # Three dots indicate the end of a YAML document
 ...

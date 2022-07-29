@@ -1,0 +1,78 @@
+--== Ansible Jinja2 if statement ==--
+
+This is ubuntu-c
+
+--== Ansible Jinja2 if elif statement ==--
+
+This is ubuntu-c
+
+--== Ansible Jinja2 if elif else statement ==--
+
+This is ubuntu-c
+
+--== Ansible Jinja2 if variable is defined ( where variable is not defined ) ==--
+
+example_variable is not defined
+
+--== Ansible Jinja2 if varible is defined ( where variable is defined ) ==--
+
+example_variable is defined
+
+--== Ansible Jinja2 for statement ==--
+
+IP Address entry 1 = 172.19.0.9
+
+--== Ansible Jinja2 for range
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+--== Ansible Jinja2 for range, reversed (simulate while greater 5) ==--
+
+10
+9
+8
+7
+6
+
+--== Ansible Jinja2 for range, reversed (continue if odd) ==--
+
+10
+8
+6
+4
+2
+
+---=== Ansible Jinja2 filters ===---
+
+--== min [1, 2, 3, 4, 5] ==--
+
+1
+
+--== max [1, 2, 3, 4, 5] ==--
+
+5
+
+--== unique [1, 1, 2, 2, 3, 3, 4, 4, 5, 5] ==--
+
+[1, 2, 3, 4, 5]
+
+--== difference [1, 2, 3, 4, 5] vs [2, 3, 4] ==--
+
+[1, 5]
+
+--== random ['rod', 'jane', 'freddy'] ==--
+
+rod
+
+--== urlsplit hostname ==--
+
+docs.ansible.com

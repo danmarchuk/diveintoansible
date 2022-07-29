@@ -6,15 +6,31 @@
 -
 
   # Hosts: where our play will run and options it will run with
-  hosts: ubuntu-c
+  hosts: all
 
   # Tasks: the list of tasks that will be executed within the play, this section
   # can also be used for pre and post tasks
-  tasks:
-    - name: Assemble conf.d to sshd_config
-      assemble:
-        src: conf.d
-        dest: sshd_config
 
+  tasks:
+    - name: create group for each of the OS
+      group_by:
+        key: "custom_{{ ansible_distribution | lower }}"
+-
+ 
+  hosts: custom_centos
+
+  tasks:
+    - name: ping all the centos hosts
+      ping:
+
+
+-
+
+  hosts: custom_ubuntu
+
+  tasks:
+    - name: Show some text
+      debug:
+        msg: "I am {{ ansible_distribution | upper }}"
 # Three dots indicate the end of a YAML document
 ...
