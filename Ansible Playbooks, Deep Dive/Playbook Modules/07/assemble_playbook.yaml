@@ -6,31 +6,16 @@
 -
 
   # Hosts: where our play will run and options it will run with
-  hosts: all
+  hosts: centos
 
   # Tasks: the list of tasks that will be executed within the play, this section
   # can also be used for pre and post tasks
 
   tasks:
-    - name: create group for each of the OS
-      group_by:
-        key: "custom_{{ ansible_distribution | lower }}"
--
+    - name: fetch /etc/redhat-release
+      fetch:
+        src: /etc/redhat-release
+        dest: redhat-release/red_hat
  
-  hosts: custom_centos
-
-  tasks:
-    - name: ping all the centos hosts
-      ping:
-
-
--
-
-  hosts: custom_ubuntu
-
-  tasks:
-    - name: Show some text
-      debug:
-        msg: "I am {{ ansible_distribution | upper }}"
 # Three dots indicate the end of a YAML document
 ...

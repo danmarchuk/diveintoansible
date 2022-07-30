@@ -15,5 +15,9 @@
       command: hostname -s
       register: hostname_output
 
+
+    - name: Show the registered output
+      debug:
+        var: hostname_output.stdout
 # Three dots indicate the end of a YAML document
 ...
